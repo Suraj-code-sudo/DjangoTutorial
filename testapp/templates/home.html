@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello Django</h1>
+    <ol>
+        <!-- {% for city in cities %}
+        <li>{{city}}</li>
+        {% endfor %} -->
+
+        {% if age %}
+        <h1>You are eligible for voting</h1>
+        {% else %}
+        <h1>Not eligible</h1>
+        {% endif %}
+    </ol>
+
+    <form action="{% url 'home' %}" method="POST">
+        {% csrf_token %}
+        <label>Age</label>
+        <input type="number" name="age">
+        <input type="submit">
+    </form>
+</body>
+</html>
